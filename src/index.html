@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
 <script>
   (function(){
 	var uStatePaths=[
@@ -83,54 +84,6 @@
 	this.uStates=uStates;
 })();
 </script>
-<style>
-    .state{
-        fill: none;
-        stroke: #a9a9a9;
-        stroke-width: 1;
-    }
-    .state:hover{
-        fill-opacity:0.5;
-    }
-    #tooltip {  
-        position: absolute;          
-        text-align: center;
-        padding: 20px;            
-        margin: 10px;
-        font: 12px sans-serif;        
-        background: lightsteelblue;  
-        border: 1px;      
-        border-radius: 2px;          
-        pointer-events: none;        
-    }
-    #tooltip h4{
-        margin:0;
-        font-size:14px;
-    }
-    #tooltip{
-        background:rgba(0,0,0,0.9);
-        border:1px solid grey;
-        border-radius:5px;
-        font-size:12px;
-        width:auto;
-        padding:4px;
-        color:white;
-        opacity:0;
-    }
-    #tooltip table{
-        table-layout:fixed;
-    }
-    #tooltip tr td{
-        padding:0;
-        margin:0;
-    }
-    #tooltip tr td:nth-child(1){
-        width:50px;
-    }
-    #tooltip tr td:nth-child(2){
-        text-align:center;
-    }
-</style>
 <body>
 <app-root></app-root>
 <div id="tooltip"></div><!-- div to hold tooltip. -->
