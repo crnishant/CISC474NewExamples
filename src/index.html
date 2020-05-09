@@ -88,7 +88,7 @@
 <app-root></app-root>
 <div id="tooltip"></div><!-- div to hold tooltip. -->
 <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
-<script src="uStates.js"></script> <!-- creates uStates. -->
+<script src="src/uStates.js"></script> 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
  
@@ -112,12 +112,90 @@
                 high=Math.round(100*Math.random());
             sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]),
                     avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)};
-        });
+        }
+        );
    
     /* draw states on id #statesvg */  
     uStates.draw("#statesvg", sampleData, tooltipHtml);
    
     d3.select(self.frameElement).style("height", "600px");
 </script>
- 
+     
+<div class="select">
+  <select name="slct" id="slct" onchange="test()">
+        <option selected disabled value="default">Choose a state</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+  </select>
+</div>
+<div id="wrapperOne" style="display: none;">
+    <h1>
+        Testing
+    </h1>
+</div>
 </body>
+<script>
+    var dropDown = document.getElementById("slct"),
+   myWrappers = [
+      document.getElementById("wrapperOne"),
+      document.getElementById("wrapperTwo"),
+      document.getElementById("wrapperThree")
+   ];
+function test() {
+for (i=0; i<myWrappers.length; i++){
+    if(dropDown.value != "default"){ 
+        myWrappers[i].innerHTML = dropDown.value + " <b>High value:</b> " + sampleData[dropDown.value].high;
+        myWrappers[i].style.display = "none";
+       myWrappers[0].style.display = "block";
+     } 
+ }
+}
+</script>
