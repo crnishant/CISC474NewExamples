@@ -192,7 +192,7 @@
 function test() {
 for (i=0; i<myWrappers.length; i++){
     if(dropDown.value != "default"){ 
-        myWrappers[i].innerHTML = dropDown.value + " <b>High value:</b> " + sampleData[dropDown.value].high;
+        myWrappers[i].innerHTML = dropDown.value + " <br><b>High value:</b> " + sampleData[dropDown.value].high;
         myWrappers[i].style.display = "none";
        myWrappers[0].style.display = "block";
      } 
