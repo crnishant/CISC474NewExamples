@@ -56,26 +56,56 @@
             <option value="Wyoming">Wyoming</option>
         </select>
     </div>
-    <div id="wrapperOne" style="display: none;">
-        <h1>
-            Testing
-        </h1>
-    </div>
-    <div id="wrapperTwo" style="display:none;">
-        <h1>
-            Testing
-        </h1>
-    </div>
-    <div id="wrapperThree" style="display:none;">
-        <h1>
-            Testing
-        </h1>
-    </div>
-    <div id="wrapperFour" style="display:none;">
-        <h1>
-            Testing
-        </h1>
-    </div>
+    <div id = "wrapper" class="wrapper" style="display:none;">
+        <div class="card">
+            <input type="checkbox" id="card1" class="more" aria-hidden="true">
+            <div class="content">
+                <div id = "front" class="front" style="background-image: url('https://www.nrcs.usda.gov/Internet/FSE_MEDIA/stelprdb1049230.jpg')">
+                    <div class="inner">
+                        <div id = "h2wrap">
+                            <h2>Temp</h2>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <label for="card1" class="button" aria-hidden="true">
+                            Details
+                        </label>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <div class="info">
+                            <span id = "cases">5</span>
+                            <div class="icon">
+                                <i class="fas fa-users"></i>
+                                <span>cases</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span id = "deaths">4</span>
+                            <div class="icon">
+                                <i class="fas fa-door-open"></i>
+                                <span>deaths</span>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Description</p>
+                        </div>
+                        <div id = "location" class="location">State, Country</div>
+                        <div id = "date" class="date">Date</div>
+                        <label for="card1" class="button return" aria-hidden="true">
+                            <i class="fas fa-arrow-left"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 </body>
 
 <svg width="960" height="600" #statesvg id="statesvg"></svg> <!-- svg to hold the map. -->

@@ -14,27 +14,38 @@ export class StatesListComponent implements OnInit {
 		this.createStatesList();
 	  })
 	}
+
+	
+	
 	test() {
+		function numberWithCommas(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+		function changeBg(state){
+			var myfront = document.getElementById("front");
+				myfront.style.backgroundImage = "background-image: url('https://www.landflip.com/photos/127403/prime-agricultural-land-deer-lodge-morgan-county-tennessee-127403-ZGjodS-XL.jpg')";
+		}
 		var inputValue = (<HTMLInputElement>document.getElementById("slct")).value;
 		var dataAsOf = this.stateData[inputValue][this.stateData[inputValue].length -1].date;
 		var totalCases = this.stateData[inputValue][this.stateData[inputValue].length - 1].confirmed;
 		var totalDeaths = this.stateData[inputValue][this.stateData[inputValue].length - 1].deaths;
-		var myWrapper = document.getElementById("wrapperOne");
-		myWrapper.innerHTML = "<b>State: </b>" + inputValue;
-		myWrapper.style.display = "none";
-		myWrapper.style.display = "block";
-		var myWrapper2 = document.getElementById("wrapperTwo");
-		myWrapper2.innerHTML = "<b>Confirmed Cases: </b>" + totalCases
-		myWrapper2.style.display = "none";
-		myWrapper2.style.display = "block";
-		var myWrapper3 = document.getElementById("wrapperThree");
-		myWrapper3.innerHTML = "<b>Total Deaths: </b>" + totalDeaths
-		myWrapper3.style.display = "none";
-		myWrapper3.style.display = "block";
-		var myWrapper4 = document.getElementById("wrapperFour");
-		myWrapper4.innerHTML = "<b>Updated on: </b>" + dataAsOf
-		myWrapper4.style.display = "none";
-		myWrapper4.style.display = "block";
+
+		var myh2 = document.getElementById("h2wrap");
+		myh2.innerHTML = "<span style='text-transform:uppercase; font-size: 30px; color: #fff; letter-spacing: 3px; margin-bottom: 0.3em; grid-row: 2; font-weight: 500; text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);'> " 
+			+ inputValue + " </span>";
+
+		var myloc = document.getElementById("location");
+		myloc.innerHTML = inputValue + ", United States";
+		var mydate = document.getElementById("date");
+		mydate.innerHTML = dataAsOf;
+		var mycases = document.getElementById("cases");
+		mycases.innerHTML = numberWithCommas(totalCases);
+		var mydeaths = document.getElementById("deaths");
+		mydeaths.innerHTML = numberWithCommas(totalDeaths);
+		var wrapper = document.getElementById("wrapper");
+		wrapper.style.display = "none";
+		wrapper.style.display = "block";
+		changeBg(inputValue);
 	  }
 	
 
