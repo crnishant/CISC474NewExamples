@@ -8,10 +8,9 @@ import { D3MapComponent } from './d3-map/d3-map.component'
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'home',component: HomeComponent},
+  {path:'home',component: D3MapComponent},
   {path:'stateslist',component: StatesListComponent},
-  {path:'graph',component: GraphComponent},
-  {path:'d3-map',component: D3MapComponent}
+  {path:'graph',component: GraphComponent}
 ];
 
 @NgModule({
