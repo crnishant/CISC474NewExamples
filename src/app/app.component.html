@@ -1,24 +1,33 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <style>
-  nav{position: relative;}
+  /*nav{position: relative;}*/
   .navbar-nav-right{
     position:absolute;right:0px;
   }
-  .bg-primary{
+  /*.bg-primary{
     background-color: #a9a9a9 !important;
+  }*/
+  .title-font{
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5rem;
+  }
+  .navitem-font{
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 15px;
   }
 </style>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <a class="navbar-brand" routerLink='home'>United States COVID-19 Data</a>
+<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand title-font" routerLink='home'>United States COVID-19 Data</a>
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link" routerLink='home' routerLinkActive='active'>Home</a>
+      <a class="nav-link navitem-font" routerLink='home' routerLinkActive='active'>Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink='stateslist' routerLinkActive='active'>State Data</a>
+      <a class="nav-link navitem-font" routerLink='stateslist' routerLinkActive='active'>State Data</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink='graph' routerLinkActive='active'>Graph</a>
+    <li class="nav-item" style = "margin-right:50px;">
+      <a class="nav-link navitem-font" routerLink='graph' routerLinkActive='active'>Graph</a>
     </li>
   </ul>
 </nav>
