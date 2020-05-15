@@ -10,8 +10,7 @@ const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component: D3MapComponent},
   {path:'stateslist',component: StatesListComponent},
-  {path:'graph',component: GraphComponent},
-  {path:'d3-map',component: D3MapComponent}
+  {path:'graph',component: GraphComponent}
 ];
 
 @NgModule({
