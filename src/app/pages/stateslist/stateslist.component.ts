@@ -21,9 +21,19 @@ export class StatesListComponent implements OnInit {
 		function numberWithCommas(x) {
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
-		function changeBg(state){
+		function changeBg(flag){
 			var myfront = document.getElementById("front");
-				myfront.style.backgroundImage = "background-image: url('https://www.landflip.com/photos/127403/prime-agricultural-land-deer-lodge-morgan-county-tennessee-127403-ZGjodS-XL.jpg')";
+
+			var newflag = flag % 3;
+			if(newflag == 0){
+				myfront.style.backgroundImage = "url('https://www.nrcs.usda.gov/Internet/FSE_MEDIA/stelprdb1049230.jpg')";
+			}
+			else if (newflag == 1){
+				myfront.style.backgroundImage = "url('https://c4.wallpaperflare.com/wallpaper/798/928/859/united-states-california-valley-sunset-sea-landscape-ocean-photo-background-brown-bridge-near-ocean-wallpaper-preview.jpg')";
+			}
+			else{
+				myfront.style.backgroundImage = "url('https://www.carnival.com/awaywego/wp-content/uploads/2018/06/mountains-in-kauai-hawaii.jpg')";
+			}
 		}
 		var inputValue = (<HTMLInputElement>document.getElementById("slct")).value;
 		var dataAsOf = this.stateData[inputValue][this.stateData[inputValue].length -1].date;
@@ -45,7 +55,7 @@ export class StatesListComponent implements OnInit {
 		var wrapper = document.getElementById("wrapper");
 		wrapper.style.display = "none";
 		wrapper.style.display = "block";
-		changeBg(inputValue);
+		changeBg(totalDeaths);
 	  }
 	
 
