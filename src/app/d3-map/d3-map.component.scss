@@ -97,3 +97,22 @@ app-d3-map {
 	}
 
 }
+
+.options button {
+  background-color: rgb(54, 57, 218);
+  border: 1px solid black; 
+  color: white; 
+  padding: 10px 24px; 
+  cursor: pointer; 
+  display: block; 
+  justify-content: space-around;
+}
+
+.options button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.options button:hover {
+  background-color: #2f0cca;
+}
