@@ -29,29 +29,6 @@ export class D3MapComponent implements OnInit {
 
   }
 
-  test() {
-    var inputValue = (<HTMLInputElement>document.getElementById("slct")).value;
-    var dataAsOf = this.stateData[inputValue][this.stateData[inputValue].length -1].date;
-    var totalCases = this.stateData[inputValue][this.stateData[inputValue].length - 1].confirmed;
-    var totalDeaths = this.stateData[inputValue][this.stateData[inputValue].length - 1].deaths;
-    var myWrapper = document.getElementById("wrapperOne");
-    myWrapper.innerHTML = "<b>State: </b>" + inputValue;
-    myWrapper.style.display = "none";
-    myWrapper.style.display = "block";
-    var myWrapper2 = document.getElementById("wrapperTwo");
-    myWrapper2.innerHTML = "<b>Confirmed Cases: </b>" + totalCases
-    myWrapper2.style.display = "none";
-    myWrapper2.style.display = "block";
-    var myWrapper3 = document.getElementById("wrapperThree");
-    myWrapper3.innerHTML = "<b>Total Deaths: </b>" + totalDeaths
-    myWrapper3.style.display = "none";
-    myWrapper3.style.display = "block";
-    var myWrapper4 = document.getElementById("wrapperFour");
-    myWrapper4.innerHTML = "<b>Updated on: </b>" + dataAsOf
-    myWrapper4.style.display = "none";
-    myWrapper4.style.display = "block";
-  }
-
   private createChart(): void {
 
     var uStatePaths = [
