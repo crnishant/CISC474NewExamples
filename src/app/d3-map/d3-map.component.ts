@@ -211,13 +211,13 @@ export class D3MapComponent implements OnInit {
       else if (display == Display.Confirmed) {
         sampleData[d] = {
           date: sampleData[d].date, deaths: sampleData[d].deaths, confirmed: sampleData[d].confirmed,
-          color: d3.interpolate("#4d8000", "#800080")(state_ID[i][state_ID[i].length - 1].confirmed / max / 25)
+          color: d3.interpolate("#6355f2", "#1a1924")(state_ID[i][state_ID[i].length - 1].confirmed / max / 25)
         };
       }
       else {
         sampleData[d] = {
           date: sampleData[d].date, deaths: sampleData[d].deaths, confirmed: sampleData[d].confirmed,
-          color: d3.interpolate("#ffffcc", "#800026")(state_ID[i][state_ID[i].length - 1].deaths / max / 2)
+          color: d3.interpolate("#a96ff7", "#170c26")(state_ID[i][state_ID[i].length - 1].deaths / max / 2)
         };
       }
     }
