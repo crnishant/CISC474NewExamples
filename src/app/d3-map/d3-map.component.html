@@ -1,2 +1,42 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<style>
+    svg{
+        margin-left: 50px;
+        margin-top:150px;
+    }
+    .about-card{
+        height:37rem;
+        margin-top: 150px;
+        margin-left:20px;
+    }
+    .card-title-font{
+        font-family: 'Montserrat', sans-serif;
+        font-size:2.5rem;
+    }
+    .card-subtitle-font{
+        font-family: 'Montserrat', sans-serif;
+        font-weight:bold;
+    }
+    .card-text-font{
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>
 <div id="tooltip"></div> <!-- div to hold tooltip. -->
-<svg width="960" height="600" #statesvg id="statesvg"></svg> <!-- svg to hold the map. -->
+<div class = "row">
+    <svg width="960" height="600" #statesvg id="statesvg"></svg> <!-- svg to hold the map. -->
+    <div class="card about-card" style="width: 25rem;">
+        <div class="card-body">
+          <h5 class="card-title card-title-font">Giving you the latest info on this pandemic</h5>
+          <br/>
+          <h6 class="card-subtitle mb-2 text-muted card-subtitle-font">Team from the University of Delaware</h6>
+          <br/>
+          <p class="card-text card-text-font">
+              This website pulls in the latest data from Johns Hopkins University regarding the coronavirus outbreak within
+              the United States. Hover over each state in the map to get basic data regarding the virus in that state. You may also
+              look at more state specific data by switching over to the 'State Data' tab. And finally, if you would like to see whether
+              or not 'the curve has flattened', feel free to see the 'Graph' tab for the total picture of the coronavirus in the US. And,
+              as always, stay safe!
+          </p>
+        </div>
+      </div>
+</div>
