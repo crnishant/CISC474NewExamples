@@ -128,20 +128,20 @@ export class StateGraphComponent implements OnInit {
 			exportEnabled: true,
 			title: {
 				text: "Confirmed Cases Over Time",
-				fontFamily: "Times"
+				fontFamily: "Montserrat"
 			},
 			subtitles:[
 				{
 					text: stateName,
-					fontFamily: "Times",
+					fontFamily: "Montserrat",
 					fontSize: 24
 				}
 			],
 			axisX:{
-				labelFontFamily: "Times"
+				labelFontFamily: "Montserrat"
 			},
 			axisY:{
-				labelFontFamily: "Times"
+				labelFontFamily: "Montserrat"
 			},
 			data: [
 			{
