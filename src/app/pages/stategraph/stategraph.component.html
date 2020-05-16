@@ -1,8 +1,9 @@
-<div id="tooltip"></div> <!-- div to hold tooltip. -->
+
 <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+<div id="tooltip"></div> <!-- div to hold tooltip. -->
 <body>
-    <div class="container">
-    <div class="select">
+    <div class="container" id="container">
+    <div class="select" id="select">
         <select name="slct" id="slct" (change)="test()">
             <option selected disabled value="default">Choose a state</option>
             <option value="Alabama">Alabama</option>
