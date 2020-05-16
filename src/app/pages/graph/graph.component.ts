@@ -3,6 +3,10 @@ import * as CanvasJS from './canvasjs.min';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { max } from 'rxjs/operators';
 
+enum Display {
+	Confirmed = 0,
+	Death = 1
+  }
 
 @Component({
   selector: 'app-graph',
@@ -11,15 +15,26 @@ import { max } from 'rxjs/operators';
 })
 export class GraphComponent implements OnInit {
 	stateData: any;
+	display = Display.Confirmed;
 	constructor(private projSvc:ProjectsService) { 
 	  projSvc.getProjects().subscribe(result=>{
 		this.stateData=result;
-		this.createGraph();
+		this.createGraph(this.display);
 	  })
 	}
 
-	createGraph(){
+	public setDisplayConfirmed(): void {
+		this.display = Display.Confirmed;
+		this.createGraph(this.display);
+	}
+	
+	public setDisplayDeaths(): void {
+		this.display = Display.Death;
+		this.createGraph(this.display);	
+	}
 
+	createGraph(display){
+		
 		
 		// Initialize max children state (arbitrary)
 		var max_children = this.stateData["Hawaii"]
@@ -53,33 +68,42 @@ export class GraphComponent implements OnInit {
 			});
 
 			// Create an array that matches listOfDates in size and fill with total confirmed 
-			var ConfirmedEachDay = []
+			var EachDay = []
 
 			// Initalize confirmed deaths to 0
 			for(var i = 0; i < listOfDates.length; i++){
-				ConfirmedEachDay.push(0);
+				EachDay.push(0);
 			}
 
 			// Calculate the total confirmed cases each day
 			state_ID.forEach(function(d,i){
 				for(var k = 0; k < d.length; k++){
-					ConfirmedEachDay[ConfirmedEachDay.length-1 - k] += +d[d.length - 1 - k].confirmed;
+					if(display == Display.Confirmed)
+						EachDay[EachDay.length-1 - k] += +d[d.length - 1 - k].confirmed;
+					else
+						EachDay[EachDay.length-1 - k] += +d[d.length - 1 - k].deaths;
 				}
 			});
 
 		// Set X and Y coordinates (X: Number of days, Y: Total Confirmed)
 		let dataPoints = [];
 		for ( var dateNumber = 0; dateNumber < listOfDates.length; dateNumber++ ) {	
-			dataPoints.push({x: new Date(listOfDates[dateNumber] + " 00:00:00"), y: ConfirmedEachDay[dateNumber-1]});
+			dataPoints.push({x: new Date(listOfDates[dateNumber] + " 00:00:00"), y: EachDay[dateNumber-1]});
 		}
 
 		// Create the graph
+		let titleText = "";
+		if(display == Display.Confirmed)
+			titleText = "Confirmed Cases Over Time";
+		else
+			titleText = "Deaths Over Time"
+
 		let chart = new CanvasJS.Chart("chartContainer", {
 			zoomEnabled: true,
 			animationEnabled: true,
 			exportEnabled: true,
 			title: {
-				text: "Confirmed Cases Over Time",
+				text: titleText,
 				fontFamily: "Times"
 			},
 			axisX:{
