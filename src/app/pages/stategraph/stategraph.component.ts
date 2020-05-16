@@ -15,7 +15,7 @@ export class StateGraphComponent implements OnInit {
 	  projSvc.getProjects().subscribe(result=>{
 		this.stateData=result;
 		var stateName = "Hawaii"; // set this stateName when using component
-		this.createGraph(stateName);
+		//this.createGraph(stateName);
 	  })
 	}
     test() {
@@ -37,6 +37,7 @@ export class StateGraphComponent implements OnInit {
 			}
 		}
 		var inputValue = (<HTMLInputElement>document.getElementById("slct")).value;
+		this.createGraph(inputValue)
 		var dataAsOf = this.stateData[inputValue][this.stateData[inputValue].length -1].date;
 		var totalCases = this.stateData[inputValue][this.stateData[inputValue].length - 1].confirmed;
 		var totalDeaths = this.stateData[inputValue][this.stateData[inputValue].length - 1].deaths;
