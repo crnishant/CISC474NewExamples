@@ -134,19 +134,19 @@ export class D3MapComponent implements OnInit {
     function tooltipHtml(n, d) {	/* function to create html content string in tooltip div. */
       if (display == Display.All) {
         return "<h4>" + n + "</h4><table>" +
-          "<tr><td>Date </td><td>" + (d.date) + "</td></tr>" +
-          "<tr><td>Confirmed </td><td>" + (d.confirmed) + "</td></tr>" +
-          "<tr><td>Deaths</td><td>" + (d.deaths) + "</td></tr>" +
+          "<tr><td>Date: </td><td>" + (d.date) + "</td></tr>" +
+          "<tr><td>Confirmed: </td><td>" + (d.confirmed) + "</td></tr>" +
+          "<tr><td>Deaths: </td><td>" + (d.deaths) + "</td></tr>" +
           "</table>";
       }
       else if (display == Display.Confirmed) {
         return "<h4>" + n + "</h4><table>" +
-          "<tr><td>Confirmed </td><td>" + (d.confirmed) + "</td></tr>" +
+          "<tr><td>Confirmed: </td><td>" + (d.confirmed) + "</td></tr>" +
           "</table>";
       }
       else {
         return "<h4>" + n + "</h4><table>" +
-          "<tr><td>Deaths</td><td>" + (d.deaths) + "</td></tr>" +
+          "<tr><td>Deaths:</td><td>" + (d.deaths) + "</td></tr>" +
           "</table>";
       }
     }
