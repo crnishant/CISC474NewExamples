@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { GraphComponent } from './pages/graph/graph.component';
 import { StatesListComponent } from './pages/stateslist/stateslist.component';
+import { StateGraphComponent } from './pages/stategraph/stategraph.component'
 import { D3MapComponent } from './d3-map/d3-map.component'
 
 
