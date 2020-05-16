@@ -80,13 +80,13 @@ export class GraphComponent implements OnInit {
 			exportEnabled: true,
 			title: {
 				text: "Confirmed Cases Over Time",
-				fontFamily: "Times"
+				fontFamily: 'Montserrat'
 			},
 			axisX:{
-				labelFontFamily: "Times"
+				labelFontFamily: 'Montserrat'
 			},
 			axisY:{
-				labelFontFamily: "Times"
+				labelFontFamily: 'Montserrat'
 			},
 			data: [
 			{
