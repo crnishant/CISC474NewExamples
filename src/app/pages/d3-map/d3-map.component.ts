@@ -41,18 +41,24 @@ export class D3MapComponent implements OnInit {
     d3.select("svg").selectAll("*").remove();
     this.display = Display.All;
     this.createChart(this.display);
+    var imgkey = document.getElementById("imgkey") as HTMLImageElement;
+    imgkey.src = "../../../assets/images/img1.png"
   }
 
   public setDisplayConfirmed(): void {
     d3.select("svg").selectAll("*").remove();
     this.display = Display.Confirmed;
     this.createChart(this.display);
+    var imgkey = document.getElementById("imgkey") as HTMLImageElement;
+    imgkey.src = "../../../assets/images/img2.png"
   }
 
   public setDisplayDeaths(): void {
     d3.select("svg").selectAll("*").remove();
     this.display = Display.Death;
     this.createChart(this.display);
+    var imgkey = document.getElementById("imgkey") as HTMLImageElement;
+    imgkey.src = "../../../assets/images/img2.png"
   }
 
   private createChart(display): void {
