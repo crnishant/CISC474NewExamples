@@ -8,8 +8,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { UsMapModule } from 'angular-us-map';
-import { D3MapComponent } from './d3-map/d3-map.component';
-import { StateGraphComponent } from './pages/stategraph/stategraph.component'
+import { D3MapComponent } from './pages/d3-map/d3-map.component';
+import { StateGraphComponent } from './pages/stategraph/stategraph.component';
+import { DonationsComponent } from './pages/donations/donations.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,14 +20,16 @@ import { StateGraphComponent } from './pages/stategraph/stategraph.component'
     HomeComponent,
     GraphComponent,
     D3MapComponent,
-    StateGraphComponent
+    StateGraphComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    UsMapModule
+    UsMapModule,
+    NgbModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi:true}],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, OnInit, ViewEncapsulation, OnChanges } from '@angular/core';
 
 import * as d3 from 'd3';
-import { ProjectsService } from '../services/projects.service';
+import { ProjectsService } from '../../services/projects.service';
 import { TestBed } from '@angular/core/testing';
 declare var test: any;
 
