@@ -103,7 +103,7 @@ export class GraphComponent implements OnInit {
 			animationEnabled: true,
 			exportEnabled: true,
 			title: {
-				text: "Confirmed Cases Over Time",
+				text: titleText,
 				fontFamily: 'Montserrat'
 			},
 			axisX:{
