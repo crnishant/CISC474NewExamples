@@ -223,7 +223,7 @@ export class D3MapComponent implements OnInit {
       else {
         sampleData[d] = {
           date: sampleData[d].date, deaths: sampleData[d].deaths, confirmed: sampleData[d].confirmed,
-          color: d3.interpolate("#a96ff7", "#170c26")(state_ID[i][state_ID[i].length - 1].deaths / max / 2)
+          color: d3.interpolate("#a96ff7", "#170c26")(state_ID[i][state_ID[i].length - 1].deaths / max / 50)
         };
       }
     }
