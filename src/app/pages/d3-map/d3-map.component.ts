@@ -205,13 +205,13 @@ export class D3MapComponent implements OnInit {
       if (display == Display.All) {
         sampleData[d] = {
           date: sampleData[d].date, deaths: sampleData[d].deaths, confirmed: sampleData[d].confirmed,
-          color: d3.interpolate("#ffffcc", "#800026")(state_ID[i][state_ID[i].length - 1].confirmed / max / 25)
+          color: d3.interpolate("#ffffcc", "#800026")(state_ID[i][state_ID[i].length - 1].confirmed / max / 1.5)
         };
       }
       else if (display == Display.Confirmed) {
         sampleData[d] = {
           date: sampleData[d].date, deaths: sampleData[d].deaths, confirmed: sampleData[d].confirmed,
-          color: d3.interpolate("#6355f2", "#1a1924")(state_ID[i][state_ID[i].length - 1].confirmed / max / 25)
+          color: d3.interpolate("#6355f2", "#1a1924")(state_ID[i][state_ID[i].length - 1].confirmed / max / 1.5)
         };
       }
       else {
